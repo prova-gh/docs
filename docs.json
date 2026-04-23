@@ -25,7 +25,8 @@
             "group": "Privacy & Data",
             "pages": [
               "ai-and-data",
-              "privacy-policy"
+              "privacy-policy",
+              "terms-of-service"
             ]
           }
         ]
@@ -42,8 +43,8 @@
     }
   },
   "logo": {
-    "light": "/images/logo-text-black.svg",
-    "dark": "/images/logo-text-white.svg"
+    "light": "/images/prova-logo-text-and-logo.png",
+    "dark": "/images/prova-logo-text-and-logo.png"
   },
   "navbar": {
     "links": [
