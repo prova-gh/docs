@@ -4,7 +4,7 @@ description: "Third parties that process personal data on Prova's behalf"
 ---
 
 # Subprocessors and AI providers
-**Last updated: October 6, 2026**
+**Last updated: October 8, 2026**
 
 Prova AI, Inc. uses the service providers below to deliver the Prova platform. Each processes personal data only on Prova's instructions, to provide the service, under written terms that include confidentiality and data-protection obligations. None of them may use Prova customer data to train their AI models.
 
@@ -22,12 +22,12 @@ We review subprocessors at least once a year and update this page when the list 
 
 | Provider | Purpose | Personal data processed | Location | Training and retention |
 |---|---|---|---|---|
-| **Google LLC — Vertex AI (Gemini)** | Primary model for evaluating assessments: transcripts, recordings, submissions and drawings against the rubric | Assessment content, transcripts, recordings | Google Cloud; requests currently use Google's global endpoint and may be served outside the US — moving to US-only endpoints | No training on customer data (Google Cloud terms and Data Processing Addendum) |
-| **OpenAI, L.L.C.** | Real-time voice conversations, text-to-speech, speech-to-text fallback, file analysis, optional multi-model grading | Student audio, transcripts, submitted files | United States / OpenAI global infrastructure | API data is not used for training; may be retained up to 30 days for abuse monitoring |
-| **ElevenLabs, Inc.** | Conversational voice agents, speech-to-text, text-to-speech | Student audio, transcripts, agent responses | ElevenLabs infrastructure (US) | Not used for training under our terms; request logs are currently retained — zero-retention mode being enabled |
+| **Google LLC — Vertex AI (Gemini)** | Primary model for evaluating assessments: transcripts, recordings, submissions and drawings against the rubric | Assessment content, transcripts, recordings | United States (Vertex AI's US multi-region endpoint) | No training on customer data (Google Cloud terms and Data Processing Addendum) |
+| **OpenAI, L.L.C.** | Real-time voice conversations, text-to-speech, speech-to-text fallback, file analysis, optional multi-model grading | Student audio, transcripts, submitted files | United States | API data is not used for training; may be retained up to 30 days for abuse monitoring |
+| **ElevenLabs, Inc.** | Conversational voice agents, speech-to-text, text-to-speech | Student audio, transcripts, agent responses | United States | Not used for training under our terms; request logs are currently retained — zero-retention mode being enabled |
 | **Anthropic, PBC** | Optional multi-model grading ("council"), only when enabled | Transcripts, submission content | United States | API data is not used for training; limited retention for trust and safety |
-| **Deepgram, Inc.** *(voice service pilot)* | Speech-to-text for Prova's self-hosted voice service | Student audio | United States | Model-improvement opt-out to be enabled before the pilot processes institutional data |
-| **OpenRouter, Inc.** *(voice service pilot)* | Routes language-model requests to inference hosts (e.g., Groq) | Conversation text, assessment context | US and EU inference hosts — being restricted to US hosts | Requests sent with data collection denied; no training |
+| **Deepgram, Inc.** *(voice service pilot)* | Speech-to-text for Prova's self-hosted voice service | Student audio | United States | Not used for training: every request opts out of Deepgram's Model Improvement Program |
+| **OpenRouter, Inc.** *(voice service pilot)* | Routes language-model requests to inference hosts in the US (e.g., DeepInfra, Baseten) | Conversation text, assessment context | United States (OpenRouter's US region, which routes only to US inference endpoints) | Requests sent with data collection denied; no training |
 
 ## Operations and communications
 
