@@ -1,3 +1,5 @@
 # Confidential vendor compliance documents (Stripe AOC etc.) - never publish
 content-for-pci/
 .DS_Store
+*.zip
+content-for-pci*
