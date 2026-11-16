@@ -4,13 +4,14 @@ description: "Prova's Product Privacy Statement"
 ---
 
 # Privacy Statement
-**Effective Date: October 22, 2026** (replaces the statement dated October 8, 2026)
+**Effective Date: [date of publication]** (replaces the statement dated October 22, 2026)
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Data Protection Officer](#data-protection-officer)
 - [Our role: service provider to institutions](#our-role-service-provider-to-institutions)
 - [Information we collect](#information-we-collect)
+- [Survey respondents and account-less participants](#survey-respondents-and-account-less-participants)
 - [How we use information](#how-we-use-information)
 - [How we use AI](#how-we-use-ai)
 - [Use of the prova.education website](#use-of-the-provaeducation-website)
@@ -53,7 +54,25 @@ If you are a student, your institution decides whether an assessment is required
 
 **From institutions:** rosters (for example, Canvas gradebook CSV imports) and invitation details.
 
+People who take an assessment without a Prova account are covered in [Survey respondents and account-less participants](#survey-respondents-and-account-less-participants).
+
 We do **not** collect biometric identifiers (we do not perform facial recognition, voiceprinting or fingerprinting), and we do not collect race, ethnicity, religion or similar sensitive demographic information.
+
+## Survey respondents and account-less participants
+Some assessments can be taken without creating a Prova account. This section describes the two ways that works. Everything else in this statement also applies to them.
+
+**Public survey links.** An instructor can turn on a public link for an opinion survey and share it with a class or group. To take the survey you open the link, read and accept the consent text, type your name and an email address, and pass a Cloudflare Turnstile check. You then answer the survey questions in a voice call with an AI agent.
+- **What we collect:** the name and email address you typed, your voice recording, the transcript of the call, the answer you chose with the reason and short quote extracted from it, the version of the consent text you accepted, and technical data (such as your IP address) as described under [Cookies, analytics and monitoring](#cookies-analytics-and-monitoring).
+- **We do not verify the email address you type.** We never send email to it. Please use an address you are comfortable sharing with the instructor.
+- **Who sees it:** the instructor and the other staff of the institution that runs the survey can see your name, email address, answers and the quote from your call, listen to your recording and read the full transcript. Your name can appear on screen if the instructor presents the results to the class.
+- **How your session works:** we create a technical account for your attempt that has no password and no usable email address. It is tied to that one survey and can reach only your own attempt. It ends when you finish, when you leave, or after seven days of inactivity. You cannot sign in to Prova with it.
+- **AI processing:** the call runs on our self-hosted voice service and the AI providers in our [subprocessor list](/subprocessors).
+
+**Partner-launched sessions (PlayVS / LeagueSpot).** When an institution or league uses the PlayVS partnership, a player opens a single-use link from the partner platform that is valid for five minutes. Prova identifies the player only by the opaque player identifier the partner sends: we do not collect a name or email address for these sessions, and the technical account created for them has no password and no usable email address. Prova records the assessment as described under [How we use AI](#how-we-use-ai) and sends the result and scores back to the partner platform, together with transcript segments where the partner's agreement with Prova provides for them.
+
+**Your rights.** The institution or partner that offered you the survey or match is the controller of your responses, and Prova is its service provider. To see, correct or delete your responses, write to privacy@prova.education (for a survey, from the email address you typed; for a partner session, include the player identifier the partner gave you), or ask the instructor. We verify the request and answer within 30 days.
+
+{/* DRAFT NOTE (remove before publishing): the sentence on how long respondent data is kept is in "Data storage and retention". Retention and a deletion path for respondents are still open in docs/designs/survey-public-link.md; today support deletes by hand. */}
 
 ## How we use information
 We use personal data only to:
@@ -75,7 +94,7 @@ AI is the core of the service and is used to:
 
 AI outputs are recommendations. **An instructor reviews every evaluation before it affects a student**, and no academic decision is made solely by automated means.
 
-AI processing is performed by the providers listed in our [subprocessor list](/subprocessors), including Google (Gemini via Vertex AI), OpenAI and ElevenLabs, and — only when an institution enables optional multi-model grading — Anthropic. Our self-hosted voice service, currently in pilot, also uses Deepgram and OpenRouter. These providers process data only to return results to Prova, are contractually prohibited from using it to train their models, and may retain request data for a limited period for abuse monitoring as described in the subprocessor list.
+AI processing is performed by the providers listed in our [subprocessor list](/subprocessors), including Google (Gemini via Vertex AI), OpenAI and ElevenLabs, and — only when an institution enables optional multi-model grading — Anthropic. Our self-hosted voice service, which runs public surveys and a pilot, also uses Deepgram and OpenRouter. These providers process data only to return results to Prova, are contractually prohibited from using it to train their models, and may retain request data for a limited period for abuse monitoring as described in the subprocessor list.
 
 Recordings and submissions are sent to AI providers as needed to evaluate them; Prova does not currently blur or remove personal information from recordings before AI processing. Students and instructors can report unintentionally uploaded or recorded personal information from inside the app, and we will remove it from our active systems.
 
@@ -86,7 +105,8 @@ Our marketing website uses Vercel Web Analytics, a cookieless service that repor
 - **Essential cookies** keep you signed in to the platform. We do not use advertising or cross-site tracking cookies or pixels.
 - **Vercel Web Analytics** (cookieless, aggregated) is used on our marketing website only. The platform (the admin and student apps) contains no analytics, advertising or tracking scripts and no session replay.
 - **Sentry** error monitoring captures error reports, including technical details such as browser type and a user's internal identifier, so that we can diagnose problems. Names, email addresses, tokens and URL query strings are removed before a report is sent, and Sentry's default collection of personal data is turned off. We do not record session replays.
-- **Cloudflare Turnstile** checks that sign-in requests come from a real browser.
+- **Cloudflare Turnstile** checks that sign-in requests, and entries to a public survey link, come from a real browser.
+- **IP addresses** are used for rate limiting and abuse prevention and are kept in the hosting provider's logs and our security logs. For public survey links we do not store an IP address in the response record.
 
 ## Subprocessors and other recipients
 We share personal data only:
@@ -124,6 +144,7 @@ We protect personal data with administrative, technical and physical safeguards,
 
 ## Data storage and retention
 - **Institutional data** (accounts, submissions, recordings, transcripts and evaluations) is kept while the institution's agreement is active, unless the institution or user asks us to delete it sooner. After the agreement ends, the institution can export its data for up to **90 days**, after which we **delete it**.
+- **Survey and partner-session responses** (name and email typed on a public survey link, recordings, transcripts and extracted answers) are kept as institutional data under the first bullet above. We delete a respondent's data on verified request.
 - **Backups** are kept for a limited, rolling period and are overwritten automatically; deleted data disappears from backups when they expire.
 - **Security and audit logs** are kept for up to 12 months.
 - **Error reports** are kept according to our monitoring provider's retention period.

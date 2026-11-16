@@ -4,7 +4,7 @@ description: "Third parties that process personal data on Prova's behalf"
 ---
 
 # Subprocessors and AI providers
-**Last updated: October 22, 2026**
+**Last updated: [date of publication]**
 
 Prova AI, Inc. uses the service providers below to deliver the Prova platform. Each processes personal data only on Prova's instructions, to provide the service, under written terms that include confidentiality and data-protection obligations. None of them may use Prova customer data to train their AI models.
 
@@ -15,7 +15,7 @@ We review subprocessors at least once a year and update this page when the list 
 | Provider | Purpose | Personal data processed | Location |
 |---|---|---|---|
 | **Supabase, Inc.** (on Amazon Web Services) | Primary database, authentication, server functions, database backups | All platform data: accounts, submissions, transcripts, evaluations, audit logs | United States (AWS us-west-2, Oregon) |
-| **Google LLC — Google Cloud** | Storage of files and recordings, video processing, content delivery of recordings, hosting of Prova's voice service (pilot), intrusion detection | Recordings (audio, webcam, screen), uploaded files, voice-call data | United States (US multi-region; us-central1, us-west1, us-west3) |
+| **Google LLC — Google Cloud** | Storage of files and recordings, video processing, content delivery of recordings, hosting of Prova's voice service, intrusion detection | Recordings (audio, webcam, screen), uploaded files, voice-call data | United States (US multi-region; us-central1, us-west1, us-west3) |
 | **Vercel Inc.** | Hosting of the web applications and website; cookieless web analytics on the marketing website only | All web traffic, IP addresses; aggregated usage on the marketing website | United States (global edge network) |
 
 ## AI providers
@@ -26,8 +26,8 @@ We review subprocessors at least once a year and update this page when the list 
 | **OpenAI, L.L.C.** | Real-time voice conversations, text-to-speech, speech-to-text fallback, file analysis, optional multi-model grading | Student audio, transcripts, submitted files | United States | API data is not used for training; may be retained up to 30 days for abuse monitoring |
 | **ElevenLabs, Inc.** | Conversational voice agents, speech-to-text, text-to-speech | Student audio, transcripts, agent responses | United States | Not used for training under our terms; request logs are currently retained — zero-retention mode being enabled |
 | **Anthropic, PBC** | Optional multi-model grading ("council"), only when enabled | Transcripts, submission content | United States | API data is not used for training; limited retention for trust and safety |
-| **Deepgram, Inc.** *(voice service pilot)* | Speech-to-text for Prova's self-hosted voice service | Student audio | United States | Not used for training: every request opts out of Deepgram's Model Improvement Program |
-| **OpenRouter, Inc.** *(voice service pilot)* | Routes language-model requests to inference hosts in the US (e.g., DeepInfra, Baseten) | Conversation text, assessment context | United States (OpenRouter's US region, which routes only to US inference endpoints) | Requests sent with data collection denied; no training |
+| **Deepgram, Inc.** *(voice service)* | Speech-to-text for Prova's self-hosted voice service | Student audio | United States | Not used for training: every request opts out of Deepgram's Model Improvement Program |
+| **OpenRouter, Inc.** *(voice service)* | Routes language-model requests to inference hosts in the US (e.g., DeepInfra, Baseten) | Conversation text, assessment context | United States (OpenRouter's US region, which routes only to US inference endpoints) | Requests sent with data collection denied; no training |
 
 ## Operations and communications
 
@@ -36,7 +36,7 @@ We review subprocessors at least once a year and update this page when the list 
 | **Functional Software, Inc. (Sentry)** | Error and performance monitoring | Error context with personal data removed, internal user identifier, browser data | United States |
 | **Resend** | Transactional and sign-in email | Name, email address, email content | United States |
 | **Stripe, Inc.** | Payments (where applicable) | Billing contact; card data is entered only on Stripe-hosted pages | United States |
-| **Cloudflare, Inc.** | Turnstile bot protection on sign-in | IP address, browser signals | Global |
+| **Cloudflare, Inc.** | Turnstile bot protection on sign-in and on public survey links | IP address, browser signals | Global |
 | **Braintrust Data, Inc.** | AI usage and cost monitoring | Model name, token counts, internal identifiers — no prompt content | United States |
 | **Slack Technologies, LLC** | Internal operational alerts | Alert text, which may include user names and support or feedback messages | United States |
 | **Google LLC — Google Workspace** | Internal email and documents, including support correspondence | Support correspondence | United States |
@@ -46,4 +46,4 @@ We review subprocessors at least once a year and update this page when the list 
 ## Integrations enabled by the institution
 The following receive data only when an institution chooses to use them, at the institution's direction:
 - **Canvas LMS** — gradebook CSV export and import, performed by the instructor.
-- **PlayVS / LeagueSpot** — assessment results and scores sent to the partner platform for institutions that use that partnership.
+- **PlayVS / LeagueSpot** — assessment results, scores and transcripts sent to the partner platform for institutions that use that partnership; the partner's opaque player identifier is the only identifier we hold for those players.
