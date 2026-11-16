@@ -1,3 +1,5 @@
-# Confidential vendor compliance documents (Stripe AOC etc.) - never publish
+# Confidential vendor compliance documents (Stripe AOC, responsibility matrix, SAQ drafts).
+# Never commit them: this repo is public. Archives are ignored wholesale as a safety net.
 content-for-pci*
+*.zip
 .DS_Store
