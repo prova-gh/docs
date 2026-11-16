@@ -1,0 +1,61 @@
+---
+title: "Payment Security (PCI DSS)"
+description: "How card payments to Prova are processed, and how PCI DSS compliance is covered"
+---
+
+# Payment security and PCI DSS
+**Last updated: November 14, 2026**
+
+This page explains how card payments to Prova are handled and where institutions can find the PCI DSS documentation they need for vendor reviews (for example, under PCI DSS Requirement 12.8.4).
+
+## Summary
+- Prova uses **Stripe, Inc.** as its payment processor for all card payments.
+- Stripe is certified as a **PCI DSS Level 1 Service Provider**, the highest level of certification in the payment card industry.
+- Card details are entered **only on pages and fields hosted by Stripe**. Prova's systems never store, process or transmit card numbers, expiration dates or security codes.
+- Because all card handling is outsourced to Stripe, Prova validates its own PCI DSS compliance each year with **Self-Assessment Questionnaire A (SAQ A)**.
+- Many institutions pay by invoice or under an institutional agreement. In those cases no card data is involved at all.
+
+## How a card payment works
+1. When a payment is due, the payer is sent to a payment page hosted by Stripe.
+2. The payer enters card details directly with Stripe, over an encrypted connection (TLS). The details go from the payer's browser to Stripe and do not pass through Prova's servers.
+3. Stripe processes the payment and tells Prova only the result: whether it succeeded, the amount and a Stripe reference ID. No card details are returned to or stored by Prova.
+
+Prova does not accept card details by email, phone, chat or paper, and Prova staff cannot see full card numbers.
+
+## What Prova holds
+| Data | Held by Prova | Held by Stripe |
+|---|---|---|
+| Full card number (PAN) | No | Yes |
+| Security code (CVC/CVV) | No | Processed, not stored after authorization |
+| Expiration date | No | Yes |
+| Card brand and last four digits | No | Yes |
+| Payer email address | Yes | Yes |
+| Payment status, amount and Stripe reference IDs | Yes | Yes |
+
+## Division of PCI DSS responsibilities
+| Area | Responsible party |
+|---|---|
+| Collecting, transmitting, processing and storing cardholder data | Stripe |
+| Security of the payment page and card fields | Stripe |
+| Payment authorization, settlement and fraud screening | Stripe |
+| Security of the Prova application that links to Stripe's payment page | Prova |
+| Protecting Prova's Stripe account and API keys (restricted access, multi-factor authentication) | Prova |
+| Confirming Stripe's PCI DSS status at least once a year | Prova |
+| Annual SAQ A self-assessment | Prova |
+
+## Documentation
+| Document | Source |
+|---|---|
+| **Prova's SAQ A** and its Attestation of Compliance | Provided by Prova on request |
+| **Stripe's PCI DSS Attestation of Compliance** (Level 1 Service Provider, PCI DSS v4.0.1, issued by an independent Qualified Security Assessor) | Provided by Prova on request, for the institution's vendor review. Stripe marks this document confidential. |
+| Stripe's description of its security program and certifications | [docs.stripe.com/security](https://docs.stripe.com/security) |
+| Stripe's integration security guide, including PCI validation by integration type | [docs.stripe.com/security/guide](https://docs.stripe.com/security/guide) |
+| Stripe's guide to PCI DSS compliance | [stripe.com/guides/pci-compliance](https://stripe.com/guides/pci-compliance) |
+| PCI Security Standards Council (SAQ and AOC templates) | [pcisecuritystandards.org](https://www.pcisecuritystandards.org) |
+
+To request the documents, email privacy@prova.education. We renew them every year and can send the current versions for your annual review.
+
+## Related pages
+- [Subprocessors](/subprocessors) lists Stripe together with our other service providers.
+- [Privacy Policy](/privacy-policy) describes how Prova protects personal data.
+- Our [Trust Center](https://trust.prova.education/) has additional security and compliance information.
