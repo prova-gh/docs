@@ -12,7 +12,7 @@ This page explains how card payments to Prova are handled and where institutions
 - Prova uses **Stripe, Inc.** as its payment processor for all card payments.
 - Stripe is certified as a **PCI DSS Level 1 Service Provider**, the highest level of certification in the payment card industry.
 - Card details are entered **only on pages and fields hosted by Stripe**. Prova's systems never store, process or transmit card numbers, expiration dates or security codes.
-- Because all card handling is outsourced to Stripe, Prova's own PCI DSS validation is done with **Self-Assessment Questionnaire A (SAQ A)**. Prova's SAQ A is currently in progress.
+- Because all card handling is outsourced to Stripe, Prova's own PCI DSS validation uses **Self-Assessment Questionnaire A (SAQ A)**. Prova's SAQ A is not yet complete; it is in progress.
 - Many institutions pay by invoice or under an institutional agreement. In those cases no card data is involved at all.
 
 ## How a card payment works
@@ -39,7 +39,7 @@ Prova does not accept card details by email, phone, chat or paper, and Prova sta
 | Security of the payment page and card fields | Stripe |
 | Payment authorization, settlement and fraud screening | Stripe |
 | Security of the Prova application that links to Stripe's payment page | Prova |
-| Protecting Prova's Stripe account and API keys | Prova |
+| Protecting Prova's Stripe account and API keys (multi-factor authentication) | Prova |
 | Confirming Stripe's PCI DSS status at least once a year | Prova |
 | Annual SAQ A self-assessment | Prova |
 
@@ -53,7 +53,7 @@ Prova does not accept card details by email, phone, chat or paper, and Prova sta
 | Stripe's guide to PCI DSS compliance | [stripe.com/guides/pci-compliance](https://stripe.com/guides/pci-compliance) |
 | PCI Security Standards Council (SAQ and AOC templates) | [pcisecuritystandards.org](https://www.pcisecuritystandards.org) |
 
-To request the documents, email privacy@prova.education. We renew them every year and can send the current versions for your annual review.
+To request Stripe's Attestation of Compliance, email privacy@prova.education. Stripe renews it every year, and we can send the current version for your annual review. Prova's own SAQ A will be available on request once it is complete.
 
 ## Related pages
 - [Subprocessors](/subprocessors) lists Stripe together with our other service providers.
